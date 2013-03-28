@@ -5,6 +5,13 @@ set showcmd		" display incomplete commands
 filetype plugin indent on " load file type plugins + indentation
 colorscheme slate
 
+"" Line numbers and height
+set number
+set nowrap
+
+"" Leader key
+let mapleader = ','
+
 "" Whitespace
 set nowrap			" don't wrap lines
 set tabstop=2 shiftwidth=2	" a tab is two spaces
