@@ -1,0 +1,116 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont DejaVu Sans:size=8
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window no
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+alignment top_right
+gap_x 25
+gap_y 15
+minimum_size 182 0
+maximum_width 182
+
+default_bar_size 150 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color cccccc
+
+#White#
+color0 55BB66
+#Orange#
+color1 E07A1F
+#Green#
+color2 CCFFAA
+
+TEXT
+##############
+# - TIME -
+##############
+${color0}TIME ${hr 2}
+${color0}${font Poky:size=16}d
+${color2}${font :size=30}$alignc${time %H:%Mh}
+${color0}${voffset -30}${font :bold:size=10}$alignc${time %d %b. %Y}
+${color0}${font :bold:size=8}$alignc${time %A}
+#${color0}${font Poky:size=16}j
+
+##############
+# - SYSTEM - #
+##############
+${color0}SYSTEM ${hr 2}
+${color0}${font Poky:size=16}S${font}${color0}${offset 7}${voffset -8}Box:  ${alignr}${color0}${nodename}${color}
+${offset 30}${font}${color0}Kernel:  ${alignr}${color0}${sysname} ${kernel}${color}
+${offset 30}${font}${color0}Uptime: ${alignr}${uptime}
+
+# |--CPU
+${color0}${font Poky:size=16}P${font}${offset 7}${voffset -8}${color0}CPU1: ${font DejaVu Sans:style=Bold:size=16}${color1}${cpu cpu1}%${color}${font} ${alignr}${color0}
+${offset 30}${cpubar cpu0}
+${offset 30}${cpugraph cpu1 25,150 100401 E07A1F}
+${offset 30}${font}Processes: ${processes} Running: ${running_processes}
+#${offset 30}${font}${color0}CPU2: ${font DejaVu Sans:style=Bold:size=16}${color1}${cpu cpu2}%${color}${font} ${alignr}${color0}
+#${offset 30}${cpugraph cpu2 25,150 E07A1F E07A1F}${color}
+#${offset 30}${font}${color0}CPU3: ${font DejaVu Sans:style=Bold:size=16}${color1}${cpu cpu3}%${color}${font} ${alignr}${color0}
+#${offset 30}${cpugraph cpu3 25,150 E07A1F E07A1F}${color}
+
+${offset 30}${color0}${font}CPU Usage            CPU%
+${offset 30}${color0}${font} ${top name 1}${alignr}${top cpu 1}
+${offset 30}${color0}${font} ${top name 2}${alignr}${top cpu 2}
+${offset 30}${color0}${font} ${top name 3}${alignr}${top cpu 3}
+
+# |--MEM
+${color0}${font Poky:size=16}M${font}${color}${offset 7}${voffset -7}${font}${color0}RAM: ${font DejaVu Sans:style=Bold:size=16}${color1}$memperc% ${font}${color0}Used
+${offset 30}${membar}
+${offset 30}${memgraph 200A02 E07A1F}
+${offset 30}${font}${color0}${mem} / ${memmax}${font}${color0} Used
+#${offset 30}${font}SWP:${color0} ${swap}/${swapmax} - ${swapperc}% 
+
+${offset 30}${color0}${font}MEM Usage            MEM%
+${offset 30}${color0}${font} ${top name 1}${alignr}${top mem 1}
+${offset 30}${color0}${font} ${top name 2}${alignr}${top mem 2}
+${offset 30}${color0}${font} ${top name 3}${alignr}${top mem 3}
+
+# |--Hard Drive
+${color0}${font Poky:size=16}y${font}${color}${offset 7}${voffset -8}${font}${color0}HD1: ${font DejaVu Sans:style=Bold:size=16}${color1}${fs_free_perc /}% ${font}${color0}Free
+${offset 30}${fs_bar /}
+${offset 30}${font}${color0}${fs_used /} / ${fs_size /} Used
+
+################
+# - Network -  #
+################
+${font}${color0}NETWORK ${hr 2}$color
+${color0}${font Poky:size=16}w${offset 7}${font}${color0}Down ${downspeed enp0s3}${alignr}Up ${upspeed enp0s3} k/s
+${offset 30}${downspeedgraph enp0s3 25,70 E07A1F E07A1F}${color0} ${alignr}${upspeedgraph enp0s3 25,70 E07A1F E07A1F}
+${offset 30}${font}${color0}Total ${totaldown enp0s3} ${alignr}Total ${totalup enp0s3}
+
+${offset 30}${color0}${font}In: ${tcp_portmon 1 32767 count} Out: ${tcp_portmon 32768 61000 count} Total: ${tcp_portmon 1 65535 count}
+
+#############
+# - NMAP -  #
+#############
+#${color0}${font Poky:size=16}z${offset 30}${font}${color0}${execi 100 ~/.conky/nmap.pl}
