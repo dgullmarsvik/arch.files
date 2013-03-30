@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+xmodmap "/home/gullet/.Xmodmap"
+setxkbmap se
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+# unclutter -idle 2 &
+# wmnd &
+# wmsmixer -w &
+# idesk &
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+
+xrandr -s 1280x800
+
+fbsetbg /home/gullet/.fluxbox/backgrounds/drop-rain-forest-free-desktop-wallpaper.jpg
+
+aterm -fg green -bg black -tr -trsb -sh 30 &
+conky &
+
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "/home/gullet/.fluxbox/log"
