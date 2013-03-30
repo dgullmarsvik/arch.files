@@ -105,7 +105,7 @@ ${offset 30}${font}${color0}${fs_used /} / ${fs_size /} Used
 ################
 ${font}${color0}NETWORK ${hr 2}$color
 ${color0}${font Poky:size=16}w${offset 7}${font}${color0}Down ${downspeed enp0s3}${alignr}Up ${upspeed enp0s3} k/s
-${offset 30}${downspeedgraph enp0s3 25,70 E07A1F E07A1F}${color0} ${alignr}${upspeedgraph enp0s3 25,70 E07A1F E07A1F}
+${offset 30}${downspeedgraph enp0s3 25,70 200A02 E07A1F}${color0} ${alignr}${upspeedgraph enp0s3 25,70 200A02 E07A1F}
 ${offset 30}${font}${color0}Total ${totaldown enp0s3} ${alignr}Total ${totalup enp0s3}
 
 ${offset 30}${color0}${font}In: ${tcp_portmon 1 32767 count} Out: ${tcp_portmon 32768 61000 count} Total: ${tcp_portmon 1 65535 count}
