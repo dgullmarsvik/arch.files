@@ -69,7 +69,7 @@ ${offset 30}${font}${color0}Kernel:  ${alignr}${color0}${sysname} ${kernel}${col
 ${offset 30}${font}${color0}Uptime: ${alignr}${uptime}
 
 # |--CPU
-${color0}${font Poky:size=16}P${font}${offset 7}${voffset -8}${color0}CPU1: ${font DejaVu Sans:style=Bold:size=16}${color1}${cpu cpu1}%${color}${font} ${alignr}${color0}
+${color0}${font Poky:size=16}P${font}${offset 7}${voffset -8}${color0}CPU: ${font DejaVu Sans:style=Bold:size=16}${color1}${cpu cpu1}%${color}${font} ${alignr}${color0}
 ${offset 30}${cpubar cpu0}
 ${offset 30}${cpugraph cpu1 25,150 100401 E07A1F}
 ${offset 30}${font}Processes: ${processes} Running: ${running_processes}
@@ -96,7 +96,7 @@ ${offset 30}${color0}${font} ${top name 2}${alignr}${top mem 2}
 ${offset 30}${color0}${font} ${top name 3}${alignr}${top mem 3}
 
 # |--Hard Drive
-${color0}${font Poky:size=16}y${font}${color}${offset 7}${voffset -8}${font}${color0}HD1: ${font DejaVu Sans:style=Bold:size=16}${color1}${fs_free_perc /}% ${font}${color0}Free
+${color0}${font Poky:size=16}y${font}${color}${offset 7}${voffset -8}${font}${color0}HD: ${font DejaVu Sans:style=Bold:size=16}${color1}${fs_free_perc /}% ${font}${color0}Free
 ${offset 30}${fs_bar /}
 ${offset 30}${font}${color0}${fs_used /} / ${fs_size /} Used
 
