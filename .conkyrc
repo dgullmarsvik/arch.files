@@ -69,10 +69,13 @@ ${offset 30}${font}${color0}Kernel:  ${alignr}${color0}${sysname} ${kernel}${col
 ${offset 30}${font}${color0}Uptime: ${alignr}${uptime}
 
 # |--CPU
-${color0}${font Poky:size=16}P${font}${offset 7}${voffset -8}${color0}CPU: ${font DejaVu Sans:style=Bold:size=16}${color1}${cpu cpu1}%${color}${font} ${alignr}${color0}
+${color0}${font Poky:size=16}P${font}${offset 7}${voffset -8}${color0}CPU: ${font DejaVu Sans:style=Bold:size=16}${color1}${cpu cpu0}%${color}${font} ${alignr}${color0}
 ${offset 30}${cpubar cpu0}
 ${offset 30}${cpugraph cpu1 25,150 100401 E07A1F}
-${offset 30}${font}Processes: ${processes} Running: ${running_processes}
+#${offset 30}${cpugraph cpu1 25,150 100401 E07A1F}
+#${offset 30}${cpugraph cpu2 25,150 100401 E07A1F}
+#${offset 30}${cpugraph cpu3 25,150 100401 E07A1F}
+${offset 30}${font}Processes: ${processes} Running: $running_processes
 #${offset 30}${font}${color0}CPU2: ${font DejaVu Sans:style=Bold:size=16}${color1}${cpu cpu2}%${color}${font} ${alignr}${color0}
 #${offset 30}${cpugraph cpu2 25,150 E07A1F E07A1F}${color}
 #${offset 30}${font}${color0}CPU3: ${font DejaVu Sans:style=Bold:size=16}${color1}${cpu cpu3}%${color}${font} ${alignr}${color0}
