@@ -22,8 +22,10 @@ xmodmap "/home/gullet/.Xmodmap"
 
 #xrandr -s 1280x800
 
-fbsetbg /home/gullet/.fluxbox/backgrounds/default.jpg
 xcompmgr -c &
+
+fbsetbg -f /home/gullet/.fluxbox/backgrounds/default.jpg
+
 #aterm -fg green -bg black -tr -trsb -sh 30 &
 #conky &
 
