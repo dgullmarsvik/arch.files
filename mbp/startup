@@ -24,7 +24,7 @@ xmodmap "/home/gullet/.Xmodmap"
 
 xcompmgr -c &
 
-fbsetbg -f /home/gullet/.fluxbox/backgrounds/default.jpg
+#fbsetbg -f /home/gullet/.fluxbox/backgrounds/default.jpg
 
 #aterm -fg green -bg black -tr -trsb -sh 30 &
 #conky &
